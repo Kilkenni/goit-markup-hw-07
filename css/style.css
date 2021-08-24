@@ -105,6 +105,40 @@ p {
   transition-duration: var(--anim-time);
 }
 
+/* generic social link list */
+
+.social-list {
+  display: flex;
+}
+
+.social-list__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-list__link {
+  display: block;
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  border-radius: 50%;
+
+  background-color: var(--bkg-color-primary);
+
+  transition-property: fill, background-color;
+  transition-timing-function: var(--anim-curve);
+  transition-duration: var(--anim-time);
+}
+
+.social-list__link:hover,
+.social-list__link:focus {
+  background-color: var(--accent-color);
+}
+
+.social-list__link:hover .social-list__icon,
+.social-list__link:focus .social-list__icon {
+  fill: var(--text-color-other-inv);
+}
+
 /* HEADER */
 
 .header {
@@ -364,19 +398,19 @@ p {
 
 /* section WE DO  */
 
-.section-wedo-list-item:not(:last-child) {
+.wedo-item:not(:last-child) {
   margin-right: 30px;
 }
 
-.section-wedo-list-item {
+.wedo-item {
   position: relative;
 }
 
-.section-wedo-image {
+.wedo-item__image {
   display: block;
 }
 
-.section-wedo-list-item-container {
+.wedo-item__desc {
   background-color: var(--bkg-color-wedo-overlay);
   width: 370px;
   height: 70px;
@@ -387,7 +421,7 @@ p {
   left: 0px;
 }
 
-.section-wedo-list-item-label {
+.wedo-item__label {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -413,14 +447,14 @@ p {
   margin-right: 30px;
 }
 
-.team-member-info {
+.team-member__info {
   padding-top: 30px;
   padding-bottom: 30px;
   padding-left: 32px;
   padding-right: 32px;
 }
 
-.team-member-name {
+.team-member__name {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.17;
@@ -431,7 +465,7 @@ p {
   color: var(--text-color-secondary);
 }
 
-.team-member-position {
+.team-member__position {
   /* font-weight: 400; */
   font-size: 16px;
   line-height: 1.17;
@@ -440,17 +474,17 @@ p {
   margin-top: 10px;
 }
 
-.team-member-info > .social-list {
+.team-member__social-list {
   margin-top: 16px;
 }
 
-.team-member .social-icon {
+.social-list__icon {
   fill: var(--fill-icon-inactive);
 }
 
-.team-member-info .social-list-item-link {
+/* .team-member-info .social-list-item-link {
   background-color: var(--bkg-color-primary);
-}
+} */
 
 /* section CLIENTS */
 
@@ -460,12 +494,12 @@ p {
   margin-right: calc(-1 * var(--projects-item-space));
 }
 
-.clients-list-item {
+.client {
   flex-basis: calc(100% / 6 - var(--projects-item-space));
   margin-right: var(--projects-item-space);
 }
 
-.client-link {
+.client__link {
   display: block;
   width: 170px;
   height: 92px;
@@ -481,7 +515,7 @@ p {
   transition-duration: var(--anim-time);
 }
 
-.client-logo {
+.client__logo {
   fill: var(--fill-icon-inactive);
 
   transition-property: fill;
@@ -489,13 +523,13 @@ p {
   transition-duration: var(--anim-time);
 }
 
-.client-link:hover,
-.client-link:focus {
+.client__link:hover,
+.client__link:focus {
   border-color: var(--accent-color);
 }
 
-.client-link:hover > .client-logo,
-.client-link:focus > .client-logo {
+.client__link:hover > .client__logo,
+.client__link:focus > .client__logo {
   fill: var(--accent-color);
 }
 
@@ -754,38 +788,6 @@ p {
 }
 
 .btn--subscribe__icon {
-  fill: var(--text-color-other-inv);
-}
-
-/* generic social link list */
-
-.social-list {
-  display: flex;
-}
-
-.social-list__item:not(:last-child) {
-  margin-right: 10px;
-}
-
-.social-list__link {
-  display: block;
-  width: 44px;
-  height: 44px;
-  padding: 12px;
-  border-radius: 50%;
-
-  transition-property: fill, background-color;
-  transition-timing-function: var(--anim-curve);
-  transition-duration: var(--anim-time);
-}
-
-.social-list__link:hover,
-.social-list__link:focus {
-  background-color: var(--accent-color);
-} /* note that this list has no color by default! */
-
-.social-list__link:hover .social-icon,
-.social-list__link:focus .social-icon {
   fill: var(--text-color-other-inv);
 }
 
