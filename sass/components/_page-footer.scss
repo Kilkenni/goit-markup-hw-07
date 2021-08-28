@@ -1,0 +1,124 @@
+/* FOOTER */
+
+.footer {
+  min-height: 250px;
+  background-color: var(--bkg-color-secondary);
+
+  padding-top: 60px;
+  padding-bottom: 60px;
+  /* padding-left: 215px; */
+}
+
+.container--footer {
+  justify-content: left;
+  align-items: flex-start;
+}
+
+.logo--footer {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.logo--footer__right {
+  color: var(--text-color-other-inv);
+}
+
+/* .footer-contacts {
+} */
+
+.footer-contacts__item {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  font-style: normal;
+  letter-spacing: 0.03em;
+
+  color: var(--text-color-misc);
+}
+
+.footer-contacts-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.addr {
+  color: var(--text-color-other-inv);
+}
+
+.link--footer-contacts {
+  color: var(--text-color-misc);
+}
+
+.footer-block--corp {
+  margin-right: 70px;
+}
+
+.footer-block {
+  padding-top: 15px;
+}
+
+.footer-block--social {
+  margin-right: 95px;
+}
+
+.footer-block__label {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+
+  text-transform: uppercase;
+  color: var(--text-color-other-inv);
+  margin-bottom: 20px;
+}
+
+.social-list__icon--footer {
+  fill: var(--bkg-color-primary);
+  vertical-align: middle;
+}
+
+.social-list__link--footer {
+  background-color: var(--bkg-color-social);
+}
+
+.form-subscribe__input {
+  margin-right: 12px;
+  width: 358px;
+  height: 50px;
+  padding-left: 16px;
+  background-color: transparent;
+  line-height: 1.25;
+
+  color: var(--text-color-other-inv);
+
+  border: 1px solid var(--border-input-subscribe);
+  border-radius: 4px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+}
+
+.form-subscribe__input,
+.form-subscribe__input::placeholder {
+  font-weight: normal;
+  font-size: 16px;
+  /* line-height: 1.25; */
+  letter-spacing: 0.03em;
+}
+
+.form-subscribe__input::placeholder {
+  color: var(--text-color-misc);
+  /* position: absolute;
+  top: 15px; */
+}
+
+.btn--subscribe {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  min-width: 200px;
+  min-height: 50px;
+}
+
+.btn--subscribe__icon {
+  fill: var(--text-color-other-inv);
+}
