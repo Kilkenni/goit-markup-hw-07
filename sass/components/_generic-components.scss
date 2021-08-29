@@ -2,10 +2,10 @@
 
 .social-list {
   display: flex;
-}
 
-.social-list__item:not(:last-child) {
-  margin-right: 10px;
+  &__item:not(:last-child) {
+    margin-right: 10px;
+  }
 }
 
 .social-list__link {
@@ -17,26 +17,27 @@
 
   background-color: var(--bkg-color-primary);
 
-  transition-property: fill, background-color;
-  transition-timing-function: var(--anim-curve);
-  transition-duration: var(--anim-time);
+  @include transition-generic("fill, background-color");
+
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+  }
 }
 
-.social-list__link:hover,
-.social-list__link:focus {
-  background-color: var(--accent-color);
-}
+.social-list__icon {
+  fill: var(--fill-icon-inactive);
 
-.social-list__link:hover .social-list__icon,
-.social-list__link:focus .social-list__icon {
-  fill: var(--text-color-other-inv);
+  .social-list__link:hover &,
+  .social-list__link:focus & {
+    fill: var(--text-color-other-inv);
+  }
 }
 
 /* generic button */
-
 .btn {
   font-family: inherit;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 16px;
   line-height: 1.875;
 
@@ -51,14 +52,10 @@
   border-color: var(--accent-color);
 
   cursor: pointer;
+  @include transition-generic("background-color, border-color, color");
 
-  transition-property: background-color, border-color, color;
-  transition-timing-function: var(--anim-curve);
-  transition-duration: var(--anim-time);
-}
-
-.btn:hover,
-.btn:focus {
-  background-color: var(--accent-hover);
-  /* color: var(--text-color-secondary); */
+  &:hover,
+  &:focus {
+    background-color: var(--accent-hover);
+  }
 }

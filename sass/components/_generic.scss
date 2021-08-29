@@ -37,21 +37,19 @@ p {
 
   justify-content: space-between;
   align-items: center;
+  &--flex-col {
+    //flex into column
+    flex-direction: column;
+  }
 }
 
 .container-list {
   display: flex;
-  /* margin-left: auto;
-  margin-right: auto; */
   max-width: 1200px;
   flex-wrap: wrap;
 
   justify-content: space-between;
   align-items: center;
-}
-
-.container--flex-col {
-  flex-direction: column;
 }
 
 .vis-hide {
@@ -66,14 +64,20 @@ p {
   display: inline;
 }
 
-.transition-generic {
+@mixin transition-generic($anim-property) {
+  //what to animate and time (default included)
+  transition-property: #{$anim-property};
   transition-timing-function: var(--anim-curve);
   transition-duration: var(--anim-time);
 }
 
-/* hover for all links */
+/* new default for all links */
+.link {
+  text-decoration: none;
+  @include transition-generic("color");
 
-.link:hover,
-.link:focus {
-  color: var(--accent-color);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
 }

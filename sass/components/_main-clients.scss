@@ -22,25 +22,21 @@
   border-color: var(--fill-icon-inactive);
   border-radius: 4px;
 
-  transition-property: border-color;
-  transition-timing-function: var(--anim-curve);
-  transition-duration: var(--anim-time);
+  @include transition-generic("border-color");
+
+  &:hover,
+  &:focus {
+    border-color: var(--accent-color);
+  }
 }
 
 .client__logo {
   fill: var(--fill-icon-inactive);
 
-  transition-property: fill;
-  transition-timing-function: var(--anim-curve);
-  transition-duration: var(--anim-time);
-}
+  @include transition-generic("fill");
 
-.client__link:hover,
-.client__link:focus {
-  border-color: var(--accent-color);
-}
-
-.client__link:hover > .client__logo,
-.client__link:focus > .client__logo {
-  fill: var(--accent-color);
+  .client__link:hover > &,
+  .client__link:focus > & {
+    fill: var(--accent-color);
+  }
 }

@@ -1,4 +1,10 @@
+@function hexToRGB($hex) {
+  @return "#{red($hex)}, #{green($hex)}, #{blue($hex)}";
+}
+
 :root {
+  /* Fonts */
+  $fonts: "https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap";
   /* Palette */
   --text-color-primary: #757575;
   --text-color-secondary: #212121;
@@ -22,6 +28,10 @@
   --bkg-color-project-overlay: rgba(33, 150, 243, 0.9);
 
   --fill-icon-inactive: #afb1b8;
+
+  $shadow-color: #000000;
+  --shadow-color: #{$shadow-color}; //for reference only
+  --shadow-color-rgb: #{hexToRGB($shadow-color)}; //change this to taste the rainbow!
 
   --accent-color: #2196f3;
   --accent-hover: #188ce8;

@@ -2,10 +2,10 @@
 
 .filters-list {
   margin-bottom: 15px; /*not padding-bottom because we don't want empty space to be included in the button and be clickable*/
-}
 
-.filters-list__item:not(:last-child) {
-  margin-right: 8px;
+  &__item:not(:last-child) {
+    margin-right: 8px;
+  }
 }
 
 .btn--filter {
@@ -22,16 +22,17 @@
   padding: 6px 22px;
 
   transition-property: background-color, color, box-shadow, filter;
-}
 
-.btn--filter:focus,
-.btn--filter:hover {
-  background-color: var(--accent-color);
-  color: var(--text-color-other-inv);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
+  &:focus,
+  &:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color-other-inv);
+    box-shadow: 0px 3px 1px rgba(var(--shadow-color-rgb), 0.1),
+      0px 1px 2px rgba(var(--shadow-color-rgb), 0.08),
+      0px 2px 2px rgba(var(--shadow-color-rgb), 0.12);
 
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0px 4px 4px rgba(var(--shadow-color-rgb), 0.25));
+  }
 }
 
 /* projects cards */
@@ -41,29 +42,23 @@
   margin-top: 35px;
   margin-bottom: calc(-1 * var(--projects-item-space));
   margin-right: calc(-1 * var(--projects-item-space));
-}
 
-.portfolio-projects__item {
-  flex-basis: calc(100% / 3 - var(--projects-item-space));
-  margin-right: var(--projects-item-space);
-  margin-bottom: var(--projects-item-space);
+  &__item {
+    flex-basis: calc(100% / 3 - var(--projects-item-space));
+    margin-right: var(--projects-item-space);
+    margin-bottom: var(--projects-item-space);
+  }
 }
 
 .project {
-  transition-property: box-shadow;
-  transition-timing-function: var(--anim-curve);
-  transition-duration: var(--anim-time);
-}
+  @include transition-generic("box-shadow");
 
-.project:hover,
-.project:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-.project:hover .thumbnail-overlay,
-.project:focus .thumbnail-overlay {
-  transform: translateY(-100%);
+  &:hover,
+  &:focus {
+    box-shadow: 0px 1px 1px rgba(var(--shadow-color-rgb), 0.12),
+      0px 4px 4px rgba(var(--shadow-color-rgb), 0.06),
+      1px 4px 6px rgba(var(--shadow-color-rgb), 0.16);
+  }
 }
 
 .project__thumbnail {
@@ -91,19 +86,20 @@
   padding-right: 24px;
 
   background-color: var(--bkg-color-project-overlay);
+  @include transition-generic("transform");
 
-  transition-property: transform;
-  transition-timing-function: var(--anim-curve);
-  transition-duration: var(--anim-time);
-}
+  .project:hover &,
+  .project:focus & {
+    transform: translateY(-100%);
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
 
-.thumbnail-overlay__text {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.56;
-  letter-spacing: 0.03em;
-
-  color: var(--bkg-color-primary);
+    color: var(--bkg-color-primary);
+  }
 }
 
 .project__desc {

@@ -2,14 +2,14 @@
 
 .section {
   padding-top: 95px;
-}
 
-.section--bottom-pad {
-  padding-bottom: 94px;
-}
+  &--bottom-pad {
+    padding-bottom: 94px;
+  }
 
-.section--bkg-gray {
-  background-color: var(--bkg-color-section);
+  &--bkg-gray {
+    background-color: var(--bkg-color-section);
+  }
 }
 
 .section__header {
