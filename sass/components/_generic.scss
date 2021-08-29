@@ -4,7 +4,7 @@ body {
   background-color: var(--bkg-color-primary);
   color: var(--text-color-primary);
 
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-default), sans-serif;
   font-style: normal;
 }
 

@@ -29,13 +29,17 @@
   --projects-item-space: 30px;
   --anim-curve: cubic-bezier(0.4, 0, 0.2, 1);
   --anim-time: 250ms;
+  --font-logo: "Raleway";
+  --font-default: "Roboto";
 }
 
+/* Fonts */
+/* testing importing via @font-face - doesn't work. Try importing local fonts later */
 body {
   position: relative;
   background-color: var(--bkg-color-primary);
   color: var(--text-color-primary);
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-default), sans-serif;
   font-style: normal;
 }
 
@@ -221,7 +225,7 @@ p {
 }
 
 .logo {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-logo), sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 26px;
